@@ -69,7 +69,7 @@ export default () => {
       <span
         className="typewrite"
         data-period="2000"
-        data-type={`["Hello, my name is Cameron.", "I'm a Front-End Developer.", "I build awesome websites and web apps!", "I love design and development!", "let's build something awesome!"]`}
+        data-type={`["Hello, my name is Cameron.", "I'm a Front-End Developer.", "I build awesome websites and web apps!", "I love design and development!", "Let's build something awesome!"]`}
       ></span>
       <div className="social_container">
         <button>
