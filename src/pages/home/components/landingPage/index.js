@@ -73,16 +73,35 @@ export default () => {
         data-type={`["Hello, my name is Cameron.", "I'm a Front-End Developer.", "I build awesome websites and web apps!", "I love design and development!", "Let's build something awesome!"]`}
       ></span>
       <div className="social_container">
-        <button>
+        <button
+          onClick={() =>
+            window.open(
+              'https://www.linkedin.com/in/cameron-lucas-68a27217a/',
+              '_blank'
+            )
+          }
+        >
           <i className=" fab fa-linkedin" /> Linked in
         </button>
-        <button>
+        <button
+          onClick={() =>
+            window.open('https://twitter.com/SiteitSolutions', '_blank')
+          }
+        >
           <i className="fab fa-twitter" /> Twitter
         </button>
-        <button>
+        <button
+          onClick={() =>
+            window.open('https://www.youtube.com/c/thelifeofadev', '_blank')
+          }
+        >
           <i className="fab fa-youtube" /> YouTube
         </button>
-        <button>
+        <button
+          onClick={() =>
+            window.open('https://github.com/CamSkiTheDev', '_blank')
+          }
+        >
           <i className="fab fa-github" /> GitHub
         </button>
       </div>
