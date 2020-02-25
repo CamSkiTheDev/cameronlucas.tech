@@ -71,7 +71,9 @@ export default () => {
         className="typewrite"
         data-period="2000"
         data-type={`["Hello, my name is Cameron.", "I'm a Front-End Developer.", "I build awesome websites and web apps!", "I love design and development!", "Let's build something awesome!"]`}
-      ></span>
+      >
+        <span className="wrap"></span>
+      </span>
       <div className="social_container">
         <button
           onClick={() =>
