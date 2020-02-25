@@ -10,7 +10,7 @@ import { StaticRouter } from 'react-router-dom'
 
 import App from './src/App'
 
-const PORT = 8080
+const PORT = 4657
 const app = express()
 
 app.use(express.static('./build'))
