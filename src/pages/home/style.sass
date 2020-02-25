@@ -27,15 +27,21 @@
             background-position: left
             animation: reverse-rotation 5s linear infinite
     span
-        color: #fff
-        font-family: 'Neutra Text'
-        font-size: 1.8em
-        letter-spacing: .05em
+      margin: 0 auto
+      width: 90%
+      color: #fff
+      font-family: 'Neutra Text'
+      font-size: 1.8em
+      letter-spacing: .05em
+      text-align: center
     .social_container
       margin: 50px auto
       display: flex
+      flex-wrap: wrap
+      justify-content: center
+      align-items: center
       button
-        margin: 0 10px
+        margin: 10px
         padding: 10px 20px
         border: none
         outline: none
@@ -54,7 +60,7 @@
 // resume section sass
 .resume
   margin: 0 auto
-  width: 100%
+  width: 80%
   max-width: 960px
   display: flex
   flex-direction: column
@@ -99,6 +105,7 @@
       line-height: 1.5em
       a
         color: #00ffff
+        word-wrap: break-word
 
 
 @keyframes rotation
