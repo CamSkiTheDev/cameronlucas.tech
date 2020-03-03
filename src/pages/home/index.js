@@ -7,7 +7,7 @@ import './style.sass'
 export default () => {
   return (
     <main className="main_app">
-      <Navbar />
+      <Navbar activeTab="Home" />
       <LandingPage />
       <ResumePage />
     </main>
