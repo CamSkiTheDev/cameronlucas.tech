@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react'
+import './style.sass'
 import photo from '../../../../photo.jpg'
 
 export default () => {
@@ -65,7 +66,7 @@ export default () => {
   return (
     <div className="main_container">
       <div className="img_wrapper">
-        <img src={photo} alt="of me" />
+        <img className="landing_img" src={photo} alt="of me" />
       </div>
       <span
         className="typewrite"
@@ -74,7 +75,7 @@ export default () => {
       >
         <span className="wrap"></span>
       </span>
-      <div className="social_container">
+      <div className="reach_out_container">
         <button
           onClick={() =>
             window.open(
@@ -83,7 +84,7 @@ export default () => {
             )
           }
         >
-          <i className=" fab fa-linkedin" /> Linked in
+          <i className="fab fa-linkedin" /> Linked in
         </button>
         <button
           onClick={() =>
@@ -106,6 +107,10 @@ export default () => {
         >
           <i className="fab fa-github" /> GitHub
         </button>
+      </div>
+      <div className="blurb_container">
+        <span>learn more about me.</span>
+        <i class="fas fa-chevron-down"></i>
       </div>
     </div>
   )

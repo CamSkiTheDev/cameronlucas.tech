@@ -1,6 +1,7 @@
 import React from 'react'
 import ResumeTitle from './resumeTitle'
 import ResumeUnit from './resumeUnit'
+import './style.sass'
 
 export default () => (
   <div className="resume">
