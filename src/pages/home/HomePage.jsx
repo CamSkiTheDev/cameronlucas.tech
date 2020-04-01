@@ -1,8 +1,8 @@
 import React from 'react'
-import Navbar from '../../components/navbar'
+import Navbar from '../../components/'
 import LandingPage from './components/landingPage'
 import ResumePage from './components/resumePage'
-import './style.sass'
+import styled from 'styled-components'
 
 export default () => {
   return (

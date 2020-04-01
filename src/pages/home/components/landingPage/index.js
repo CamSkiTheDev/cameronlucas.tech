@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react'
 import './style.sass'
 import photo from '../../../../photo.jpg'
+import LandingPageImg from '../../../../components/landingPageImg/LandingPageImg'
 
 export default () => {
   useEffect(() => {
@@ -65,9 +66,7 @@ export default () => {
 
   return (
     <div className="main_container">
-      <div className="img_wrapper">
-        <img className="landing_img" src={photo} alt="of me" />
-      </div>
+      <LandingPageImg photo={photo} />
       <span
         className="typewrite"
         data-period="2000"

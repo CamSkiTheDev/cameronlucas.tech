@@ -1,6 +1,6 @@
 import React from 'react'
 import './style.sass'
-import Navbar from '../../components/navbar'
+import Navbar from '../../components/navbar/NavBar'
 
 export default () => {
   return (
