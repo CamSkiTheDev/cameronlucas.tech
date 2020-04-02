@@ -81,7 +81,7 @@ export default props => {
     justify-content: center;
     align-items: center;
     white-space: nowrap;
-    @media only screen (max-width: 610px) {
+    @media only screen and (max-width: 610px) {
       padding: 0 20px;
     }
   `

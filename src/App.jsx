@@ -6,8 +6,10 @@ import Portfolio from './pages/portfolio'
 
 export default () => (
   <Switch>
-    <Route path="/" exact component={Home} />
-    <Route path="/portfolio" component={Portfolio} />
+    <main className="main_app">
+      <Route path="/" exact component={Home} />
+      <Route path="/portfolio" component={Portfolio} />
+    </main>
     <Route path="*" component={() => <h1>404 Page Not Found!</h1>} />
   </Switch>
 )
