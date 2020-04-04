@@ -1,4 +1,5 @@
-import React from 'react'
+/* eslint-disable react-hooks/exhaustive-deps */
+import React, { useEffect, useState } from 'react'
 import styled from 'styled-components'
 import {
   Navbar,
@@ -10,47 +11,47 @@ import {
 } from '../../components'
 import photo from '../../photo.jpg'
 
+const Main = styled.div`
+  width: 100%;
+  height: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+`
+
+const MainLandingPageContainer = styled.div`
+  width: 100%;
+  height: 100%;
+  min-height: 95vh;
+  display: flex;
+  flex-grow: 1;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+`
+
+const LearnMoreBlurbContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Open Sans';
+  font-size: 1.2em;
+  color: #ffffff;
+`
+
+const MainResumePageContainer = styled.div`
+  margin: 0 auto;
+  width: 80%;
+  max-width: 960px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+`
+
 export default () => {
-  const Main = styled.div`
-    width: 100%;
-    height: 100%;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-  `
-
-  const MainLandingPageContainer = styled.div`
-    width: 100%;
-    height: 100%;
-    min-height: 95vh;
-    display: flex;
-    flex-grow: 1;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-  `
-
-  const LearnMoreBlurbContainer = styled.div`
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    font-family: 'Open Sans';
-    font-size: 1.2em;
-    color: #ffffff;
-  `
-
-  const MainResumePageContainer = styled.div`
-    margin: 0 auto;
-    width: 80%;
-    max-width: 960px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  `
-
-  const WorkExperienceArray = [
+  const [workExperienceState] = useState([
     {
       title: `Freelance Web Development Company`,
       company: `Siteit Solutions`,
@@ -82,9 +83,9 @@ export default () => {
         </div>,
       ],
     },
-  ]
+  ])
 
-  const EducationArray = [
+  const [educationState] = useState([
     {
       title: `freeCodeCamp - Front End Libraries Certification`,
       company: `freeCodeCamp`,
@@ -158,7 +159,37 @@ export default () => {
       timeAtCompany: `2017 - 2019`,
       description: `Graduated from Mclain High School in Lakewood Colorado, Class of 2019`,
     },
-  ]
+  ])
+
+  const [sideProjectsState, setSideProjectState] = useState([])
+  useEffect(() => {
+    fetch('/api/youtube/stats')
+      .then(res => res.json())
+      .then(json => {
+        setSideProjectState([
+          {
+            title: `${json.channelInfo.channelTitle} - YouTube`,
+            description: [
+              `My YouTube channel with ${Number(
+                json.channelInfo.channelVideoCount
+              ).toLocaleString(
+                'en-us'
+              )}+ video tutorials on web development, game modification, and mod menu development. With over ${Number(
+                json.channelInfo.channelViewCount
+              ).toLocaleString('en-us')} video views and ${Number(
+                json.channelInfo.channelSubCount
+              ).toLocaleString(
+                'en-us'
+              )} subscribers. Join us and let's build something awesome. `,
+              <a href="https://www.youtube.com/c/thelifeofadev/?sub_confirmation=1">
+                Subscribe Now
+              </a>,
+            ],
+          },
+        ])
+      })
+      .catch(err => console.error('Fetch Error:', err))
+  }, [])
 
   return (
     <Main>
@@ -174,7 +205,7 @@ export default () => {
       </MainLandingPageContainer>
       <MainResumePageContainer>
         <ResumeSectionTitle title="EXPERIENCE" />
-        {WorkExperienceArray.map(x => (
+        {workExperienceState.map(x => (
           <ResumeUnit
             title={x.title}
             company={x.company}
@@ -182,8 +213,12 @@ export default () => {
             description={x.description}
           />
         ))}
+        <ResumeSectionTitle title="SIDE PROJECTS" />
+        {sideProjectsState.map(x => (
+          <ResumeUnit title={x.title} description={x.description} />
+        ))}
         <ResumeSectionTitle title="EDUCATION" />
-        {EducationArray.map(x => (
+        {educationState.map(x => (
           <ResumeUnit
             title={x.title}
             company={x.company}

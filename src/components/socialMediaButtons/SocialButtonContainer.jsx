@@ -2,14 +2,15 @@ import React from 'react'
 import styled from 'styled-components'
 import SocialButton from './SocialButton'
 
+const SocialMediaButtonsContainer = styled.div`
+  margin: 50px auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+`
+
 export default () => {
-  const SocialMediaButtonsContainer = styled.div`
-    margin: 50px auto;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-  `
   return (
     <SocialMediaButtonsContainer>
       <SocialButton

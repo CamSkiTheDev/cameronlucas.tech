@@ -12,6 +12,7 @@ export default props => {
     font-family: 'Roboto';
     background: ${props.color};
   `
+
   return (
     <SocialButton onClick={() => window.open(props.url, '_blank')}>
       <i className={props.iconClass} /> {props.value}

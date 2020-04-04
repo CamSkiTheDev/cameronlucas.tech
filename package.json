@@ -9,7 +9,10 @@
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.4.1",
     "@testing-library/user-event": "^7.2.1",
+    "cors": "^2.8.5",
     "express": "^4.17.1",
+    "googleapis": "^48.0.0",
+    "http-proxy-middleware": "^1.0.3",
     "ignore-styles": "^5.0.1",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
@@ -21,8 +24,11 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
+    "server": "nodemon ./server/",
+    "dev": "concurrently --kill-others \"npm run server\" \"npm run start\" ",
     "eject": "react-scripts eject"
   },
+  "proxy": "http://localhost:5000/",
   "eslintConfig": {
     "extends": [
       "react-app",
@@ -48,9 +54,11 @@
     ]
   },
   "devDependencies": {
+    "concurrently": "^5.1.0",
     "eslint-config-prettier": "^6.10.0",
     "eslint-plugin-prettier": "^3.1.2",
     "node-sass": "^4.13.1",
+    "nodemon": "^2.0.2",
     "prettier": "^1.19.1"
   }
 }

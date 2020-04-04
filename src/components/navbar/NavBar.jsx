@@ -4,7 +4,6 @@ import styled from 'styled-components'
 import logo from '../../logo.jpg'
 
 export default props => {
-  console.log(window.innerWidth)
   const [activeTab, setActiveTab] = useState(props.activeTab)
   const [isMobile, toggleMobile] = useState(
     window.innerWidth <= 610 ? true : false

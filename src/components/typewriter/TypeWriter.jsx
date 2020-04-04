@@ -2,6 +2,29 @@ import React from 'react'
 import styled from 'styled-components'
 import { useEffect } from 'react'
 
+const TypeWriterSpan = styled.span`
+  width: 75%;
+  height: 3.5em;
+  color: #fff;
+  font-family: 'Neutra Text';
+  font-size: 3.24em;
+  letter-spacing: 0.05em;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  @media only screen and (max-width: 610px) {
+    height: 5em;
+  }
+`
+
+const TypeWriterWrap = styled.span`
+  text-align: start;
+  color: #fff;
+  word-break: break-word;
+`
+
 export default () => {
   var TxtType = function(el, toRotate, period) {
     this.toRotate = toRotate
@@ -54,29 +77,6 @@ export default () => {
       new TxtType(element, JSON.parse(toRotate), period)
     }
   }, [])
-
-  const TypeWriterSpan = styled.span`
-    width: 75%;
-    height: 3.5em;
-    color: #fff;
-    font-family: 'Neutra Text';
-    font-size: 3.24em;
-    letter-spacing: 0.05em;
-    text-align: center;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
-    @media only screen and (max-width: 610px) {
-      height: 5em;
-    }
-  `
-
-  const TypeWriterWrap = styled.span`
-    text-align: start;
-    color: #fff;
-    word-break: break-word;
-  `
 
   return (
     <TypeWriterSpan
